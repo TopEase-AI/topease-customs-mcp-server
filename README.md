@@ -92,52 +92,16 @@ uv pip install -e .
 
 ### 方式二：streamable-http 模式（推荐用于 Web 应用）
 
-创建 `.env` 文件配置环境变量：
-
-```env
-TOPEASE_MCP_API_KEY=<YOUR_API_KEY>
-MCP_SERVER_PORT=8001
-MCP_SERVER_HOST=0.0.0.0
-```
-
-修改 `main.py` 中的传输模式（取消注释对应行）：
-
-```python
-def main() -> None:
-    """Run the MCP server."""
-    # mcp.run(transport="stdio")
-    mcp.run(transport="streamable-http", port=PORT, host="0.0.0.0")
-```
-
 然后启动服务器：
 
-```bash
-uvx topease-mcp
-```
-
-或使用 Python 模块：
-
-```bash
-python -m topease_mcp
-```
-
-### 环境变量配置
-
-| 环境变量 | 说明 | 默认值 |
-|---------|------|--------|
-| `TOPEASE_MCP_API_KEY` | API 密钥，从 https://tradee.topease.net/ 获取 | - |
-| `MCP_SERVER_PORT` | HTTP 服务器监听端口 | `8001` |
-| `MCP_SERVER_HOST` | HTTP 服务器监听地址 | `0.0.0.0` |
+URL:https://mcp.topease.net/mcp
 
 ## API Key 配置说明
 
-本服务支持三种 API Key 配置方式（按优先级排序）：
+本服务支持两种 API Key 配置方式（按优先级排序）：
 
 1. **环境变量**（推荐）：设置 `TOPEASE_MCP_API_KEY` 环境变量
 2. **HTTP 请求头**（streamable-http 模式）：通过 `Authorization: Bearer <your_api_key>` 请求头传递
-3. **直接运行**：代码中通过 `os.getenv("TOPEASE_MCP_API_KEY")` 读取
-
-> **注意**：工具参数中已移除 `api_key` 参数，大模型调用时无需在参数中传入 API Key。
 
 ## 可用工具
 
