@@ -92,9 +92,33 @@ uv pip install -e .
 
 ### 方式二：streamable-http 模式（推荐用于 Web 应用）
 
-然后启动服务器：
+#### 公共服务地址
 
-URL:https://mcp.topease.net/mcp
+我们提供了公共的 streamable-http 服务，您可以直接使用以下配置：
+
+| 配置项 | 值 |
+|--------|------|
+| **服务类型** | 可流式传输的 HTTP (streamableHttp) |
+| **服务 URL** | `https://mcp.topease.net/mcp` |
+| **请求头** | `Authorization=Bearer <your_api_key>` |
+
+#### 在大模型客户端中配置
+
+在 Claude Desktop、Trae 等支持 streamable-http 的客户端中添加配置：
+
+```json
+{
+  "mcpServers": {
+    "【PRO】TOPEASE 贸易数据查询 stream http": {
+      "type": "streamableHttp",
+      "url": "https://mcp.topease.net/mcp",
+      "headers": {
+        "Authorization": "Bearer <YOUR_API_KEY>"
+      }
+    }
+  }
+}
+```
 
 ## API Key 配置说明
 
