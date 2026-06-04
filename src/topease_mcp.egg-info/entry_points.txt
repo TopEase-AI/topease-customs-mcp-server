@@ -1,0 +1,2 @@
+[console_scripts]
+topease-mcp = topease_mcp.server:main
