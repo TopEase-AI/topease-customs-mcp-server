@@ -49,7 +49,7 @@ uvx topease-mcp
 ### 从源码安装
 
 ```bash
-git clone https://github.com/huiyitony/TOPEASE-MCP
+git clone https://github.com/topease020/topease-customs-mcp-server.git
 cd topease-mcp
 uv pip install -e .
 ```
@@ -293,7 +293,7 @@ topease-mcp/
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/huiyitony/TOPEASE-MCP.git
+git clone https://github.com/topease020/topease-customs-mcp-server.git.git
 cd topease-mcp
 
 # 2. 安装依赖
@@ -340,4 +340,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件。
 
 - 官网：[https://tradee.topease.net/](https://tradee.topease.net/)
 - PyPI：[https://pypi.org/project/topease-mcp/](https://pypi.org/project/topease-mcp/)
-- GitHub：[https://github.com/huiyitony/TOPEASE-MCP](https://github.com/huiyitony/TOPEASE-MCP)
+- GitHub：[https://github.com/topease020/topease-customs-mcp-server.git](https://github.com/topease020/topease-customs-mcp-server.git)
