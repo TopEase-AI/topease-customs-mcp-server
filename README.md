@@ -257,7 +257,7 @@ topease-mcp/
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/topease020/topease-customs-mcp-server.git.git
+git clone https://github.com/topease020/topease-customs-mcp-server.git
 cd topease-mcp
 
 # 2. 安装依赖
