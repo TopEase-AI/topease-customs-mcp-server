@@ -14,7 +14,7 @@
 
 ## 简介
 
-`topease-customs-data` 是一个 MCP（Model Context Protocol）服务器，对接 [topease.net](https://tradee.topease.net/) 海关智能体贸易数据平台，支持按**进出口企业名称**、**产品关键字**、**HS编码**、**贸易时间**、**进出口类型**及**国家/市场/地区**进行多维度联合查询，帮助大模型快速获取真实的全球贸易情报数据。
+`topease-customs-data` 是一个 MCP（Model Context Protocol）服务器，对接 [tradee.topease.net](https://tradee.topease.net/) 海关智能体贸易数据平台，支持按**进出口企业名称**、**产品关键字**、**HS编码**、**贸易时间**、**进出口类型**及**国家/市场/地区**进行多维度联合查询，帮助大模型快速获取真实的全球贸易情报数据。
 
 > 使用前需在 [https://tradee.topease.net/](https://tradee.topease.net/) 注册并获取 API Key。
 
@@ -50,7 +50,7 @@ uvx topease-mcp
 
 ```bash
 git clone https://github.com/topease020/topease-customs-mcp-server.git
-cd topease-mcp
+cd topease-customs-mcp-server
 uv pip install -e .
 ```
 
@@ -81,7 +81,7 @@ uv pip install -e .
   "mcpServers": {
     "topease-customs-data": {
       "command": "python",
-      "args": ["-m", "topease_mcp"],
+      "args": ["-m", "topease-mcp"],
       "env": {
         "TOPEASE_MCP_API_KEY": "<YOUR_API_KEY>"
       }
@@ -136,7 +136,7 @@ uv pip install -e .
 | 参数 | 类型 | 必填 | 说明 | 默认值 |
 |------|------|------|------|--------|
 | `company_name` | string | 否 | 企业名称（模糊匹配进口商/出口商） | - |
-| `product_keyword` | string | 否 | 产品描述关键字，如 "led"、"手机" | - |
+| `product_keyword` | string | 否 | 产品描述关键字，如 "led"、"valve" | - |
 | `hs_code` | string | 否 | HS 海关编码（前缀匹配），如 "8415" | - |
 | `trade_type` | string | 否 | 贸易类型：`import`（进口）、`export`（出口）、`all`（全部） | `all` |
 | `country` | string | 否 | 国家/地区名称（中文/英文/ISO编码均可），如 "China"、"美国"、"JP" | - |
@@ -282,7 +282,7 @@ topease-mcp/
 ```bash
 # 1. 克隆项目
 git clone https://github.com/topease020/topease-customs-mcp-server.git
-cd topease-mcp
+cd topease-customs-mcp-server
 
 # 2. 安装依赖
 uv sync
