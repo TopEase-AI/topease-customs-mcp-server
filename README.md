@@ -14,7 +14,7 @@
 
 ## 简介
 
-`topease-customs-data` 是一个 MCP（Model Context Protocol）服务器，对接 [tradee.topease.net](https://tradee.topease.net/) 海关智能体贸易数据平台，支持按**进出口企业名称**、**产品关键字**、**HS编码**、**贸易时间**、**进出口类型**及**国家/市场/地区**进行多维度联合查询，帮助大模型快速获取真实的全球贸易情报数据。
+`全球海关贸易数据 MCP` 是一个 MCP（Model Context Protocol）服务器，对接 [tradee.topease.net](https://tradee.topease.net/) 海关智能体贸易数据平台，支持按**进出口企业名称**、**产品关键字**、**HS编码**、**贸易时间**、**进出口类型**及**国家/市场/地区**进行多维度联合查询，帮助大模型快速获取真实的全球贸易情报数据。
 
 > 使用前需在 [https://tradee.topease.net/](https://tradee.topease.net/) 注册并获取 API Key。
 
