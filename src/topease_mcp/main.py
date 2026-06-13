@@ -19,23 +19,22 @@ Usage:
 
 from __future__ import annotations
 
-import json
 import os
 from typing import Any, Optional
 
 from dotenv import load_dotenv
 from fastmcp import FastMCP, Context
 from starlette.requests import Request
-from setting import PORT
+from .setting import PORT
 
 load_dotenv()
 
 TOPEASE_MCP_API_KEY = os.getenv("TOPEASE_MCP_API_KEY")
 
-from auth import (
+from .auth import (
     validate_api_key,
 )
-from customs import (
+from .customs import (
     CustomsDataService,
     CustomsQueryParams,
     TradeType,
@@ -53,7 +52,6 @@ _customs_service = CustomsDataService()
 
 def _build_query_params(**kwargs: Any) -> CustomsQueryParams:
     """Build CustomsQueryParams from tool keyword arguments."""
-    print(TradeType(kwargs.get("trade_type", "all")))
     return CustomsQueryParams(
         product_keyword=kwargs.get("product_keyword"),
         hs_code=kwargs.get("hs_code"),
@@ -100,8 +98,6 @@ def _get_api_key_from_headers(ctx: Context) -> Optional[str]:
     
     # 4. 检查 authorization 是否存在（大小写不敏感）
     auth_header = headers.get("Authorization") or headers.get("authorization")
-    print("------------auth_header")
-    print(auth_header)
     if not auth_header:
         return None  # authorization 不存在，返回 None
     
@@ -162,9 +158,6 @@ async def search_customs_data(
     """
     # Try to get API key from headers first, then from parameter
     
-    print("------------TOPEASE_MCP_API_KEY")
-    print(TOPEASE_MCP_API_KEY)
-
     final_api_key = TOPEASE_MCP_API_KEY or _get_api_key_from_headers(ctx)
     
     if final_api_key == None:

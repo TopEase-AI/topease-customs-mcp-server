@@ -81,7 +81,7 @@ uv pip install -e .
   "mcpServers": {
     "topease-customs-data": {
       "command": "python",
-      "args": ["-m", "topease-mcp"],
+      "args": ["-m", "topease_mcp"],
       "env": {
         "TOPEASE_MCP_API_KEY": "<YOUR_API_KEY>"
       }
@@ -281,7 +281,7 @@ topease-mcp/
 
 ```bash
 # 1. 克隆项目
-git clone https://github.com/topease020/topease-customs-mcp-server.git
+git clone https://github.com/TopEase-AI/topease-customs-mcp-server.git
 cd topease-customs-mcp-server
 
 # 2. 安装依赖
@@ -316,6 +316,31 @@ A: 修改 `main.py` 中 `mcp.run()` 的 `transport` 参数即可：
 - `transport="stdio"` — 桌面客户端模式
 - `transport="streamable-http"` — Web 应用模式
 
+## Agent Skill
+
+如果你使用 Codex、ChatGPT Agent Skills 或 Claude Code，可以安装配套 skill：
+
+- Skill 仓库：[https://github.com/TopEase-AI/topease-customs-mcp-skill](https://github.com/TopEase-AI/topease-customs-mcp-skill)
+- Claude Code plugin marketplace：
+
+```bash
+claude plugin marketplace add TopEase-AI/topease-customs-mcp-skill
+claude plugin install topease-customs-mcp@topease-agent-skills
+```
+
+## MCP 目录收录
+
+本仓库适合提交到 MCP server directory / registry，例如 Smithery、Glama、PulseMCP、mcpservers.org。提交时建议使用：
+
+| 字段 | 建议值 |
+| --- | --- |
+| Name | TOPEASE Customs MCP |
+| Repository | `https://github.com/TopEase-AI/topease-customs-mcp-server` |
+| Package | `topease-mcp` |
+| Transport | stdio, streamable HTTP |
+| Remote endpoint | `https://mcp.topease.net/mcp` |
+| Auth | `Authorization: Bearer <TOPEASE_API_KEY>` |
+
 ## 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件。
@@ -328,4 +353,4 @@ MIT License - 详见 [LICENSE](LICENSE) 文件。
 
 - 官网：[https://tradee.topease.net/](https://tradee.topease.net/)
 - PyPI：[https://pypi.org/project/topease-mcp/](https://pypi.org/project/topease-mcp/)
-- GitHub：[https://github.com/topease020/topease-customs-mcp-server.git](https://github.com/topease020/topease-customs-mcp-server.git)
+- GitHub：[https://github.com/TopEase-AI/topease-customs-mcp-server.git](https://github.com/TopEase-AI/topease-customs-mcp-server.git)

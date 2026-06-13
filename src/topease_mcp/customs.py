@@ -8,8 +8,8 @@ from typing import Any
 import requests
 import json
 from dotenv import load_dotenv
-from country import find_by_id, find_country
-from setting import CUSTOMS_API_BASE_URL
+from .country import find_by_id, find_country
+from .setting import CUSTOMS_API_BASE_URL
 
 load_dotenv()
 
@@ -149,8 +149,6 @@ class CustomsDataService:
 
     async def _search_api(self, params: CustomsQueryParams) -> CustomsQueryResult:
         body = params.to_api_body()
-        print("==================body")
-        print(body)
         headers: dict[str, str] = {}
         headers["Content-Type"] = "application/json"
         if self._api_key:
